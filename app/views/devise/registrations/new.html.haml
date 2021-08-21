@@ -1,21 +1,19 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.d-flex.justify-content-center
+  .card.flex-column.shadow.p-3.mb-5.bg-body.rounded.form-container(style="width: 24rem;")
+    .text-purple
+      .title
+        %h2 Sign up
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .form-floating.mb-4
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id: "user_email", placeholder: "Email"
+          %label(for="floatingInput") Email
+        .form-floating.mb-4
+          = f.password_field :password, autocomplete: "new-password", class: "form-control", id: "user_password", placeholder: "Password"
+          %label(for="floatingInput") Password 
+        .form-floating.mb-4
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", id: "user_password_confirmation", placeholder: "Confirm Password"
+          %label(for="floatingInput") Confirm Password
+        .actions.d-flex.justify-content-center
+          = f.submit "Sign up", class: "btn btn-purple btn-margin btn-wide"
+      = render "devise/shared/links"
