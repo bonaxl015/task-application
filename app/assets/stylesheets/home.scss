@@ -11,6 +11,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .home-container {
@@ -20,8 +21,8 @@ body {
   margin-left: 8%;
 }
 
-.title {
-  font-size: 4rem;
+.home-title {
+  font-size: 4.5rem;
   margin: 20px 0;
 }
 
