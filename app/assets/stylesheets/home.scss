@@ -1,0 +1,48 @@
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #FFF;
+  height: 100%;
+  background-image: url("/bg-todo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.home-container {
+  height: 300px;
+  width: 400px;
+  margin-top: 12%;
+  margin-left: 8%;
+}
+
+.home-title {
+  font-size: 4.5rem;
+  margin: 20px 0;
+}
+
+.description {
+  font-size: 25px;
+}
+
+.btn-home {
+  margin: 30px 0;
+}
+
+.btn-navs {
+  margin: 10px 10px;
+}
+
+.btn-purple {
+  background-color: #454380;
+  color: #FFF;
+  &:hover {
+      background-color: #55529C;
+      color: #FFF;
+  }
+}

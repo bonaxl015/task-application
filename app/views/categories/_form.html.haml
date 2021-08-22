@@ -1,0 +1,11 @@
+.text-purple
+  = form_with model: @category do |f|
+    .form-floating.mb-4
+      = f.text_field :name, class: "form-control", id: "Name", placeholder: "Name"
+      %label{:for => "floatingInput"} Name
+    .form-floating.mb-4
+      = f.text_area :image_url, class: "form-control", id: "Image url", style: "height: 170px", placeholder: "Image URL"
+      %label{:for => "floatingTextarea"} Image URL
+    .d-flex.justify-content-evenly.button-container
+      = f.submit :Submit, class: "btn btn-purple btn-space"
+      = link_to 'Back', categories_path, class: "btn btn-danger btn-space"
