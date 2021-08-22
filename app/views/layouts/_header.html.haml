@@ -1,0 +1,10 @@
+%nav.navbar.navbar-dark.bg-success
+  .container
+    %h2 TaskApp
+    %div 
+      - if user_signed_in?
+        = link_to "Edit Profile", edit_user_registration_path, class: "btn btn-purple btn-space"
+        = link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-space"
+      - else
+        = link_to "Sign Up", new_user_registration_path, class: "btn btn-purple btn-space"
+        = link_to "Sign In", new_user_session_path, class: "btn btn-purple btn-space"
