@@ -1,24 +1,5 @@
-# README
+Hello there!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Please visit this link to view the application in heroku
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://bon-todo-application.herokuapp.com/
