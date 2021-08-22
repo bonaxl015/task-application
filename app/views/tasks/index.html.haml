@@ -1,0 +1,33 @@
+.container
+  .all-task-display.d-flex
+    %div 
+      .card.d-flex.justify-content-center.text-purple{:style => "width: 14rem;"}
+        .card-margin
+          .d-flex.justify-content-center
+            = image_tag @category.image_url, class: "card-img-top circle-display", alt: "No image available"
+          .title
+            %h2= @category.name
+            %p= display_progress(@category.id)
+          .d-flex.justify-content-center
+            .progress
+              .progress-bar.btn-purple{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "25", :role => "progressbar", :style => "width: #{percent_progress(@category.id)}%;"}= percent_progress(@category.id).to_s.concat('%')
+          .d-flex.justify-content-center
+            .category-button-container.d-flex.justify-content-evenly
+              = link_to 'Add Task', new_category_task_path, class: "btn btn-purple btn-space"
+              = link_to "Back", categories_path, class: "btn btn-danger"
+
+    .task-div
+      .task-top-display
+        %h2.title All Tasks
+      .task-all-container 
+        = render partial: 'tasks/display', collection: @all_tasks, as: :task || 'There are no tasks for today'
+    .task-div
+      .task-top-display
+        %h2.title Tasks Due Today
+      .task-all-container 
+        = render partial: 'tasks/display', collection: @due_tasks, as: :task || 'There are no tasks due for today'
+    .task-div
+      .task-top-display
+        %h2.title Completed Tasks
+      .task-all-container 
+        = render partial: 'tasks/display', collection: @completed_tasks, as: :task || 'There are no tasks completed'

@@ -1,0 +1,21 @@
+.task-form-container.text-purple
+  = form_with model: [@category, @task] do |f|
+    .mb-4
+      = f.label :name
+      = f.text_field :name, class: "form-control", id: "name"
+    .mb-4
+      = f.label :description
+      = f.text_field :description, class: "form-control", id: "description"
+    .mb-4
+      = f.label :priority
+      %span (1: High, 2: Medium, 3: Low)
+      = f.number_field :priority, in: 1..3, step: 1, class: "form-control", id: "priority"
+    .mb-4
+      = f.label :deadline
+      = f.datetime_local_field :deadline, class: "form-control", id: "deadline"
+    .mb-4
+      = f.label :completed
+      = f.select :completed, ['true', 'false'], selected: 'false', class: "form-control", id: "completed"
+    .d-flex.justify-content-evenly.button-container
+      = f.submit :Submit, class: "btn btn-purple btn-space"
+      = link_to 'Back', category_tasks_path, class: "btn btn-danger btn-space"

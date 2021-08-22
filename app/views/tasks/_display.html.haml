@@ -1,0 +1,11 @@
+.d-flex.justify-content-evenly.flex-wrap.card-margin
+  .card.text-dark{:style => "width: 12rem;"}
+    .card-body
+      %div 
+        .badge.btn-purple= translate_priority(task.priority)
+      %h5.card-title.task-title.text-purple= task.name
+      %p.card-text Due on #{task.deadline.strftime("%d %b %Y")}
+      %p.card-text= task.description
+      .d-flex.justify-content-evenly.button-container
+        = link_to 'Edit', edit_category_task_path(task.category, task), class: "btn btn-purple btn-space"
+        = link_to 'Delete', [task.category, task], class: "btn btn-danger btn-space", method: :delete, data: { confirm: 'Are you sure?' }
