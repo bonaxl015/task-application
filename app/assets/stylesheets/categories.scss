@@ -1,0 +1,51 @@
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #454380;
+  &:hover {
+      color: #55529C;
+  }
+}
+
+.text-purple{
+  color: #454380;
+  &:hover {
+      color: #55529C;
+  }
+}
+
+.btn-space {
+  margin: 0 10px;
+}
+
+.progress {
+  width: 100%;
+}
+
+.category-button-container {
+  width: 100%;
+  margin-top: 20px;
+  align-self: center;
+  justify-self: center;
+}
+
+.card {
+  width: 20rem;
+}
+
+.title {
+  text-align: center;
+}
+
+.form-container {
+  margin-top: 5%;
+}
+
+.title-with-button {
+  margin: 20px 0;
+}
