@@ -18,16 +18,16 @@
 
     .task-div
       .task-top-display
-        %h2.title All Tasks
+        %h3.title Pending
       .task-all-container 
         = render partial: 'tasks/display', collection: @all_tasks, as: :task || 'There are no tasks for today'
     .task-div
       .task-top-display
-        %h2.title Tasks Due Today
+        %h3.title Due Today
       .task-all-container 
         = render partial: 'tasks/display', collection: @due_tasks, as: :task || 'There are no tasks due for today'
     .task-div
       .task-top-display
-        %h2.title Completed Tasks
+        %h3.title Completed
       .task-all-container 
         = render partial: 'tasks/display', collection: @completed_tasks, as: :task || 'There are no tasks completed'
