@@ -7,5 +7,5 @@
       %p.card-text Due on #{task.deadline.strftime("%d %b %Y")}
       %p.card-text= task.description
       .d-flex.justify-content-evenly.button-container
-        = link_to 'Edit', edit_category_task_path(task.category, task), class: "btn btn-purple btn-space"
-        = link_to 'Delete', [task.category, task], class: "btn btn-danger btn-space", method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to 'Edit', edit_category_task_path(task.category, task), class: "text-purple font-bold btn-space"
+        = link_to 'Delete', [task.category, task], class: "text-danger font-bold btn-space", method: :delete, data: { confirm: 'Are you sure?' }
