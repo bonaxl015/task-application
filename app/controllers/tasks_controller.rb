@@ -4,8 +4,8 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[show update destroy]
 
   def index
-    @all_tasks = Task.where(user_id: current_user.id)
-    @due_tasks = Task.where(user_id: current_user.id, deadline: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).order(priority: :asc)
+    @all_tasks = Task.where(user_id: current_user.id, completed: false)
+    @due_tasks = Task.where(user_id: current_user.id, completed: false, deadline: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).order(priority: :asc)
     @completed_tasks = Task.where(user_id: current_user.id, completed: true)
   end
 
